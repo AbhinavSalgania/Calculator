@@ -1,0 +1,135 @@
+/* stylesheet for the calculator */
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+#calculator {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #000000;
+}
+
+.display{
+    width: 188.241px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #37ead5;
+    color: #0a0909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* Display the operator buttons in the last column */
+
+#calculator .operator {
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #9658ec;
+    color: #0a0909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#calculator .number {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #dd2525;
+    color: #0a0909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Display clear at the bottom of the calculator */
+
+#calculator .clear {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #efd527;
+    color: #0a0909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#calculator .clear {
+    clear: both;
+    width: 200px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #efd527;
+    color: #0a0909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#calculator .equals{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #81530f;
+    color: #0a0909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#calculator .decimal{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    background-color: #81530f;
+    color: #0a0909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* When hovering over the buttons, change the background color */
+
+#calculator .number:hover, #calculator .operator:hover, #calculator .clear:hover, #calculator .equals:hover, #calculator .decimal:hover {
+    background-color: #c2509a;
+    color: #ffffff;
+    cursor: pointer;
+}
