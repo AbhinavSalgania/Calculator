@@ -10,13 +10,9 @@ const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equalTo = document.querySelector('.result');
 const clear = document.querySelector('.clear');
-const decimal = document.querySelector('.decimal');
-
-decimal.addEventListener('click', addDecimal);
 
 numbers.forEach(button => button.addEventListener('click', show));
 operators.forEach(button => button.addEventListener('click', show));
-decimal.addEventListener('click', show);
 
 function show(e) 
 {
@@ -79,7 +75,7 @@ equalTo.addEventListener('click', (e) =>
 
 function evaluate() 
 {
-    result = operate(parseInt(firstNumber), parseInt(secondNumber), operator);
+    result = operate(parseFloat(firstNumber), parseFloat(secondNumber), operator);
     display.textContent = result;
     firstNumber = result;
     secondNumber = '';
@@ -97,31 +93,6 @@ function clearDisplay()
     value = '';
 }
 
-function addDecimal() 
-{
-    if (operator === '') 
-    {
-        if (firstNumber.includes('.')) 
-        {
-            return;
-        } else
-        {
-            firstNumber += '.';
-        }
-    } 
-    else 
-    {
-        if (secondNumber.includes('.')) 
-        {
-            return;
-        } 
-        else 
-        {
-            secondNumber += '.';
-        }
-    }
-}
-
 // display funny message when user tries to divide by zero
 
 function divideByZero() 
@@ -133,8 +104,6 @@ function divideByZero()
     result = '';
     value = '';
 }
-
-
 
 // basic functions for the calculator
 
@@ -150,8 +119,9 @@ function multiply(a, b) {
     return a * b;
 }
 
+// round the result to 3 decimal places
 function divide(a, b) {
-    return a / b;
+    return Math.round((a / b) * 1000) / 1000;
 }
 
 // function to operate
@@ -174,7 +144,6 @@ function operate(a, b, operator) {
 
 function handleKeyPress(e) {
     if (e.key >= 0 && e.key <= 9) { show(e);}
-    if (e.key === '.') { addDecimal(e);}
     if (e.key === 'Enter') { evaluate(e);}
     if (e.key === 'Backspace') { deleteLast(e);}
     if (e.key === 'Escape') { clearDisplay(e);}
@@ -182,12 +151,48 @@ function handleKeyPress(e) {
 }
 
 document.addEventListener('keydown', handleKeyPress);
-        
 
 
 
+/*
 
 
-
-     
-        
+function addDecimal()
+{
+    firstNum = firstNumber.toString();
+    secondNum = secondNumber.toString();
+    if (operator === '') 
+    {
+        if (firstNum.includes('.'))
+        {
+            return;
+        } 
+        else if ( firstNum === '' )
+        {
+            firstNum = '0.';
+            display.textContent = firstNum;
+        }
+        else
+        {
+            firstNum += '.';
+            display.textContent = firstNum;
+        }
+    }
+    else if (operator !== '')
+    {
+        if (secondNum.includes('.'))
+        {
+            return;
+        }
+        else if (secondNum === '')
+        {
+            secondNum = '0.';
+            display.textContent = secondNum + operator + secondNum;
+        }
+        else
+        {
+            secondNum += '.';
+            display.textContent = firstNum + operator + secondNum;
+        }
+    }
+}*/
