@@ -136,7 +136,7 @@ function operate(a, b, operator) {
         return multiply(a, b);
     } else if (operator === '/') {
         if (b === 0) {
-            divideByZero();
+            return divideByZero();
         } else {
             return divide(a, b);
         }
