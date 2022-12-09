@@ -98,6 +98,7 @@ function clearDisplay()
 function divideByZero() 
 {
     alert("Come On! You are not that stupid! You are better than this!");
+    display.textContent = 0;
     firstNumber = '';
     secondNumber = '';
     operator = '';
