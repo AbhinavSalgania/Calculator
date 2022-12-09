@@ -104,6 +104,7 @@ function divideByZero()
     operator = '';
     result = '';
     value = '';
+    return 0;
 }
 
 // basic functions for the calculator
