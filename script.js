@@ -142,16 +142,71 @@ function operate(a, b, operator) {
     }
 }
 
-function handleKeyPress(e) {
-    if (e.key >= 0 && e.key <= 9) { show(e);}
-    if (e.key === 'Enter') { evaluate(e);}
-    if (e.key === 'Backspace') { deleteLast(e);}
-    if (e.key === 'Escape') { clearDisplay(e);}
-    if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') { show(e);}
+/*// add keyboard support and use other functions to make it work
+
+window.addEventListener('keydown', handleKeyboard);
+
+function handleKeyboard(e)
+{
+    if (e.key >=0 && e.key <=9)
+    {
+        if (operator === '') {
+            firstNumber += e.target.textContent;
+            display.textContent = firstNumber;
+        } 
+        else
+        {
+            secondNumber += e.target.textContent;
+            display.textContent = firstNumber + operator + secondNumber;
+        }
+    } 
+    else if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/')
+    {
+        {
+            if (secondNumber === '')
+            {
+                value += firstNumber;
+                operator = e.target.textContent;
+                value += operator;
+                display.textContent = firstNumber + operator;
+            } 
+            else if (secondNumber !== '')
+            {
+                evaluate();
+                operator = e.target.textContent;
+                value = result + operator;
+                display.textContent = value;
+            }
+            
+        }
+    }
+    else if (e.key === 'Enter')
+    {
+        if (firstNumber === '' && secondNumber === '' && operator === '') 
+        {
+            display.textContent = 0;
+        } 
+        else if (firstNumber !== '' && secondNumber === '' && operator === '') 
+        {
+            display.textContent = firstNumber;
+        } 
+        else if (firstNumber !== '' && secondNumber === '' && operator !== '') 
+        {
+            display.textContent = firstNumber;
+        } 
+        else if (firstNumber !== '' && secondNumber !== '' && operator !== '') 
+        {
+            evaluate();
+        }
+
+    }
+    else if (e.key === 'Backspace')
+    {
+        clearDisplay();
+
+    }
 }
-
-document.addEventListener('keydown', handleKeyPress);
-
+/*
 
 
 /*
