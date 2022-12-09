@@ -30,7 +30,7 @@ function show(e)
         else
         {
             secondNumber += e.target.textContent;
-            display.textContent = value + secondNumber;
+            display.textContent = firstNumber + operator + secondNumber;
         }
     } 
 
@@ -43,8 +43,6 @@ function show(e)
                 operator = e.target.textContent;
                 value += operator;
                 display.textContent = firstNumber + operator;
-                console.log(firstNumber);
-                console.log(value);
             } 
             else if (secondNumber !== '')
             {
@@ -52,7 +50,6 @@ function show(e)
                 operator = e.target.textContent;
                 value = result + operator;
                 display.textContent = value;
-                console.log(value);
             }
             
         }
