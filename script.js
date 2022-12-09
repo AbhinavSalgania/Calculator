@@ -10,7 +10,6 @@ const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equalTo = document.querySelector('.result');
 const clear = document.querySelector('.clear');
-const deleteButton = document.querySelector('.delete');
 const decimal = document.querySelector('.decimal');
 
 decimal.addEventListener('click', addDecimal);
@@ -56,9 +55,27 @@ function show(e)
     }
 }
 
-equalTo.addEventListener('click', evaluate);
 clear.addEventListener('click', clearDisplay);
-deleteButton.addEventListener('click', deleteLast);
+
+equalTo.addEventListener('click', (e) =>
+{
+    if (firstNumber === '' && secondNumber === '' && operator === '') 
+    {
+        display.textContent = 0;
+    } 
+    else if (firstNumber !== '' && secondNumber === '' && operator === '') 
+    {
+        display.textContent = firstNumber;
+    } 
+    else if (firstNumber !== '' && secondNumber === '' && operator !== '') 
+    {
+        display.textContent = firstNumber;
+    } 
+    else if (firstNumber !== '' && secondNumber !== '' && operator !== '') 
+    {
+        evaluate();
+    }
+});
 
 function evaluate() 
 {
@@ -78,19 +95,6 @@ function clearDisplay()
     operator = '';
     result = '';
     value = '';
-}
-
-function deleteLast() 
-{
-    value = value.slice(0, -1);
-    display.textContent = value;
-    if (operator === '') 
-    {
-        firstNumber = firstNumber.slice(0, -1);
-    } else 
-    {
-        secondNumber = secondNumber.slice(0, -1);
-    }
 }
 
 function addDecimal() 
