@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Calculator</title>   
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-    <div id="calculator" class="calculatorGrid">
-        <div id="display" class="display">0</div>
-        <button id="clear" class="clear" onclick="clearDisplay()">AC</button>
-        <button id="divide" class="operator" onclick="addOperator('/')">/</button>
-        <button id="multiply" class="operator" onclick="addOperator('*')">*</button>
-        <button id="seven" class="number" onclick="addNumber('7')">7</button>
-        <button id="eight" class="number" onclick="addNumber('8')">8</button>
-        <button id="nine" class="number" onclick="addNumber('9')">9</button>
-        <button id="subtract" class="operator" onclick="addOperator('-')">-</button>
-        <button id="four" class="number" onclick="addNumber('4')">4</button>
-        <button id="five" class="number" onclick="addNumber('5')">5</button>
-        <button id="six" class="number" onclick="addNumber('6')">6</button>
-        <button id="add" class="operator" onclick="addOperator('+')">+</button>
-        <button id="one" class="number" onclick="addNumber('1')">1</button>
-        <button id="two" class="number" onclick="addNumber('2')">2</button>
-        <button id="three" class="number" onclick="addNumber('3')">3</button>
-        <button id="equals" class="equals" onclick="calculate()">=</button>
-        <button id="zero" class="number" onclick="addNumber('0')">0</button>
-        <button id="decimal" class="decimal" onclick="addDecimal()">.</button>
+    <!-- Create a div to hold the calculator -->
+  <div class="calculator">
+    <!-- Create a div to hold the display -->
+    <div class="display">0</div>
+    <!-- Create buttons for each number -->
+    <button class="number">1</button>
+    <button class="number">2</button>
+    <button class="number">3</button>
+    <button class="number">4</button>
+    <button class="number">5</button>
+    <button class="number">6</button>
+    <button class="number">7</button>
+    <button class="number">8</button>
+    <button class="number">9</button>
+    <button class="number">0</button>
+    <!-- Create buttons for each operation -->
+    <button class="operator">+</button>
+    <button class="operator">-</button>
+    <button class="operator">*</button>
+    <button class="operator">/</button>
+    <!-- Create a button to calculate the result -->
+    <button class="result">=</button>
+    <!-- Create a button to clear the display -->
+    <button class="delete">DEL</button>
+    <button class="clear">AC</button>
+    <!-- Create a button for decimal-->
+    <button class="decimal">.</button>
+  </div>
 </body>
 </html>
+
