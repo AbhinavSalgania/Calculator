@@ -129,6 +129,17 @@ function divide(a, b) {
 // function to operate
 
 function operate(a, b, operator) {
+    if(!a) 
+    { 
+        if(operator === '-' || operator === '+')
+        {
+            a = 0;
+        }
+        else if (operator === '*' || operator === '/')
+        {
+            a = 1;
+        }
+    }
     if (operator === '+') {
         return add(a, b);
     } else if (operator === '-') {
