@@ -1,70 +1,46 @@
-/* Add some styling to your calculator */
-
 body{
-    background-color: #000000;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    text-align: center;
-    padding-top: 10px;
+    background-color: #a3a3a3;
 }
 
 .calculator {
-    width: 200px;
-    height: 450px;
-    margin: 0 auto;
-    padding: 0;
+    display: inline-grid;
     border: 1px solid #000000;
-    background-color: #ba2b83;
-  }
-  /* Style the buttons */
-  .calculator button {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    font-size: 20px;
-    float: left;
-    border: 1px solid #000000;
-  }
-  /* Style the display */
-  .calculator .display {
-    width: 96%;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #000000;
-    background-color: #d9ecea;
-    color: #0a0909;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    text-align: right;
-    padding-right: 10px;
+    width: 300px;
+    height: 400px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
   }
 
-.calculator .number{
-    background-color: #f2c67b;
-}
-
-.calculator .operator{
-    background-color: #aee7e1;
-}
-
-.calculator .result{
-    background-color: #ef92c0;
-}
-
-.calculator .clear{
-    background-color: #f35757;
-}
-
-.calculator .decimal{
-    background-color: #a7f3bd;
-}
-
-/* When hovering over the buttons, change the background color */
-
-.calculator button:hover {
-    background-color: #c2509a;
+  .calculator .display{
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    background-color: #000000;
     color: #ffffff;
-    cursor: pointer;
-}
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+    
+  }
+
+  .numbers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column: 1 / 4;
+    grid-row: 2 / 6;
+  }
+
+  .number0{
+    grid-column: 2/3;
+    grid-row: 4 / 5;
+    font-size: 1.5em;
+  }
+
+  .operator{
+    font-size: 1.5em;
+  }
+
+  .clear, .result, .number{
+    font-size: 1.5em;
+  }
